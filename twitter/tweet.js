@@ -15,7 +15,7 @@ function getTweet(json){
 	var date = new Date(json[i].created_at);
 	// ‚Â‚Ô‚â‚«‚Ì•¶š—ñ‚ğtweet‚É‚¢‚ê‚é
 	var tweet = json[i].text;
-	// ‚Â‚Ô‚â‚«‚Ìì¬(0`24)‚ğ hour‚É‚¢‚ê‚é
+	// ‚Â‚Ô‚â‚«‚Ìì¬(0`23)‚ğ hour‚É‚¢‚ê‚é
 	var hour = date.getHours();
 	var alpha = hour / 23.0;
 	// F‚Ìİ’è:•s“§–¾“x‚ğ‚Â‚Ô‚â‚©‚ê‚½ŠÔ‚Å‚©‚¦‚Ä‚¢‚é
