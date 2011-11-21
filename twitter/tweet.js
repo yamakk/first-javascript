@@ -1,7 +1,7 @@
 var canvas;
 var context;
 
-//ƒ†[ƒU–¼‚ğˆø”‚É—^‚¦‚é‚ÆATwitter‚Ì‚Â‚Ô‚â‚«‚ğæ‚Á‚Ä‚­‚é
+//ãƒ¦ãƒ¼ã‚¶åã‚’å¼•æ•°ã«ä¸ãˆã‚‹ã¨ã€Twitterã®ã¤ã¶ã‚„ãã‚’å–ã£ã¦ãã‚‹
 function requestTweet(username){
     var url = 'https://api.twitter.com/1/statuses/user_timeline.json?screen_name=' +
 	username + '&count=200&callback=?';
@@ -9,19 +9,25 @@ function requestTweet(username){
     $.getJSON(url, getTweet);
 };
 
-//requestTweet‚ªTwitter‚©‚çƒf[ƒ^‚ğó‚¯æ‚é‚ÆŒÄ‚Ño‚³‚ê‚é
+//requestTweetãŒTwitterã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’å—ã‘å–ã‚‹ã¨å‘¼ã³å‡ºã•ã‚Œã‚‹
 function getTweet(json){
     for(var i=0; i<json.length; i++){
 	var date = new Date(json[i].created_at);
-	// ‚Â‚Ô‚â‚«‚Ì•¶š—ñ‚ğtweet‚É‚¢‚ê‚é
+	// ã¤ã¶ã‚„ãã®æ–‡å­—åˆ—ã‚’tweetã«ã„ã‚Œã‚‹
 	var tweet = json[i].text;
-	// ‚Â‚Ô‚â‚«‚Ìì¬(0`23)‚ğ hour‚É‚¢‚ê‚é
+	// ã¤ã¶ã‚„ãã®ä½œæˆæ™‚(0ã€œ23)ã‚’ hourã«ã„ã‚Œã‚‹
 	var hour = date.getHours();
+	console.log("No."+i);
+	console.log("ã¤ã¶ã‚„ãæœ¬æ–‡:"+tweet);
+	console.log("æ™‚é–“å¸¯:"+hour);
+	console.log("--------");
+	/*
 	var alpha = hour / 23.0;
-	// F‚Ìİ’è:•s“§–¾“x‚ğ‚Â‚Ô‚â‚©‚ê‚½ŠÔ‚Å‚©‚¦‚Ä‚¢‚é
+	// è‰²ã®è¨­å®š:ä¸é€æ˜åº¦ã‚’ã¤ã¶ã‚„ã‹ã‚ŒãŸæ™‚é–“ã«ã‚ˆã£ã¦
 	context.fillStyle = 'rgba(0, 0, 0, '+alpha+')';
-	// lŠpŒ`‚Ì•`‰æ
+	// å››è§’å½¢ã®æç”»
 	context.fillRect(i+3*i, 0 , 3, 600);
+	*/
     };
 };
 
