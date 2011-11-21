@@ -26,7 +26,7 @@ function getTweet(json){
 };
 
 $(document).ready(function(){
-   canvas = document.getElementById('canvas');
+   canvas = document.getElementById('mycanvas');
    context = canvas.getContext('2d');
    requestTweet('earthquake_jp');
 });
