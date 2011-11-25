@@ -21,7 +21,7 @@ function requestSearch(keyword){
     $.getJSON(url, getTweet);
 };
 
-//requestTweetがTwitterからデータを受け取ると呼び出される
+//requestSearchがTwitterからデータを受け取ると呼び出される
 function getTweet(json){
     for(var i=0; i<json.results.length; i++){
 	var date = new Date(json.results[i].created_at);
